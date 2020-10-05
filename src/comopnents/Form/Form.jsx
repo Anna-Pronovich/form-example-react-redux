@@ -1,9 +1,23 @@
-import React from 'react';
+import React,  { useState }  from 'react';
 
 const Form = (
-  handleChange,
-  handleSubmit
 ) => {
+  const [user, setUser] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+})
+
+console.log('user', user)
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setUser(user => ({ ...user, [name]: value }));
+  }
+
+  const handleSubmit =()=>{console.log('submit')}
+  
   return (
     <form>
       <div>
@@ -40,9 +54,9 @@ const Form = (
           className=""
           id="checkbox"
           value="accept-term"
-          />
+        />
       </div>
-<button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit}>Submit</button>
     </form>
   )
 }

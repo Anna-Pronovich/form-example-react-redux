@@ -1,10 +1,10 @@
 import React from 'react';
-import RegisterPage from './RegisterPage/RegisterPage';
+import { RegistrationPage } from './page';
 
 const App = () => {
   return (
     <div className="App">
-      <RegisterPage />
+      <RegistrationPage />
     </div>
   );
 }
