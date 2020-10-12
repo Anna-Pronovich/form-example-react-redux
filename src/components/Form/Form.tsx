@@ -1,23 +1,25 @@
-import React,  { useState }  from 'react';
+import React, { useState } from 'react';
+import { IFormProps } from "./FormPropTypes";
 
-const Form = (
+const Form: React.FC<IFormProps> = (
+  {registerUser}
 ) => {
   const [user, setUser] = useState({
     firstName: '',
     lastName: '',
     email: '',
-})
+  })
 
-console.log('user', user)
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setUser(user => ({ ...user, [name]: value }));
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = event.target;
+    setUser(user => ({ ...user, [id]: value }));
   }
 
-  const handleSubmit =()=>{console.log('submit')}
-  
+  const handleSubmit = () => {
+    // console.log("register")
+     registerUser(user) 
+    }
+
   return (
     <form>
       <div>
