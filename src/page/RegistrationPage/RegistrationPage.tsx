@@ -15,14 +15,14 @@ const RegistrationPage: React.FC<IRegistrationPageProps> = ({ registerUser }) =>
     }
 
     const handleSubmit = () => {
-        // console.log("register", user)
          registerUser(user) 
     }
+    
     return (
-        <div >
+        < >
             <h1>Registration Page</h1>
             {/* <Form registerUser={registerUser}/> */}
-            <form>
+            <div >
                 <div>
                     <label htmlFor="firstName">First name</label>
                     <input
@@ -60,8 +60,8 @@ const RegistrationPage: React.FC<IRegistrationPageProps> = ({ registerUser }) =>
                     />
                 </div>
                 <button onClick={handleSubmit}>Submit</button>
-            </form>
-        </div>
+            </div>
+        </>
     );
 }
 

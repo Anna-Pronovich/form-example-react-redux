@@ -10,7 +10,6 @@ export interface IUserRegistrationState {
   userData: IRegistrationUserData | null;
 }
 
-
 export interface IRequestPayload {
   firstName: string;
   lastName: string;

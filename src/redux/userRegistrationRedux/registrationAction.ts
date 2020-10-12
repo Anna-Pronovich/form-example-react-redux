@@ -13,10 +13,9 @@ export const registerUser: IRegisterUser = (reqPayload) => {
   return async dispatch => {
     try {
       dispatch(registrationLoading());
-      const { default:data } = await import("./fakeUser.json")
-
+      const { default: data } = await import("./fakeUser.json")
       dispatch(registrationSuccess(data))
-    } catch(error) {
+    } catch (error) {
       dispatch(registrationFailure(error.message.toString()))
     }
   }
