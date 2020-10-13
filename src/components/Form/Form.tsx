@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { IFormProps } from "./FormPropTypes";
+import './Form.css';
 
 const Form: React.FC<IFormProps> = (
-  {registerUser}
+  { registerUser }
 ) => {
   const [user, setUser] = useState({
     firstName: '',
@@ -16,50 +17,21 @@ const Form: React.FC<IFormProps> = (
   }
 
   const handleSubmit = () => {
-    // console.log("register")
-     registerUser(user) 
-    }
+    registerUser(user)
+  }
 
   return (
-    <form>
-      <div>
-        <label htmlFor="firstName">First name</label>
-        <input
-          type="text"
-          className=""
-          placeholder="first name"
-          id="firstName"
-          onChange={handleChange} />
+    <div className="registration-form">
+      <div className="form-container">
+        <h2 className="form-title">Registration</h2>
+        <div className="form-fields-wrapper">
+          <input type="text" id="firstName" className="input" placeholder="First name" onChange={handleChange} />
+          <input type="text" id="lastName" className="input" placeholder="Last name" onChange={handleChange} />
+          <input type="email" id="email" className="input" placeholder="Email" onChange={handleChange} />
+        </div>
+        <button className="submit-btn" onClick={handleSubmit}>Submit</button>
       </div>
-      <div className="">
-        <label htmlFor="lastName">Last name</label>
-        <input
-          type="text"
-          className=""
-          placeholder="last name"
-          id="lastName"
-          onChange={handleChange} />
       </div>
-      <div className="">
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          className=""
-          placeholder="email"
-          id="email"
-          onChange={handleChange} />
-      </div>
-      <div className="">
-        <label htmlFor="checkbox">Accept terms</label>
-        <input
-          type="checkbox"
-          className=""
-          id="checkbox"
-          value="accept-term"
-        />
-      </div>
-      <button onClick={handleSubmit}>Submit</button>
-    </form>
   )
 }
 
